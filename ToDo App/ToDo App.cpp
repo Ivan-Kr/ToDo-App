@@ -42,7 +42,7 @@ public:
         std::list<std::wstring>::iterator List2 = Doing.begin();
         std::list<std::wstring>::iterator List3 = Done.begin();
 
-        std::wcout << "ToDO\tDoing\tDone";
+        std::wcout << "<List\nToDo\tDoing\tDone\n";
 
         while (List1 != ToDo.end() || List2 != Doing.end() || List3 != Done.end()) {
             if (List1 != ToDo.end()) {

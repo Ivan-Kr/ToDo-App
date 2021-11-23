@@ -1,0 +1,14 @@
+[name]
+[nToDo List]
+[nDoing List]
+[nDone List]
+<ToDo>
+[*Elements]
+[*Elements]
+<Doing>
+[*Elements]
+[*Elements]
+<Done>
+[*Elements]
+[*Elements]
+<end>

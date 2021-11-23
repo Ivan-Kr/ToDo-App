@@ -1,4 +1,5 @@
-﻿#include <iostream>
+﻿// (C) Ivan-Kr github: https://github.com/Ivan-Kr
+#include <iostream>
 #include <fstream>
 #include <list>
 #include <string>
@@ -108,6 +109,9 @@ int main()
         }
         if (str == L"show") {
             s.ShowList();
+        }
+        else {
+            std::wcout << "\nInvalid: unknown command\n";
         }
     }
 

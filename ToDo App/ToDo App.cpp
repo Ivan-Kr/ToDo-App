@@ -4,6 +4,8 @@
 #include <list>
 #include <string>
 
+float ver = 1.05;
+
 class ToDoList {
 
     std::wstring name;
@@ -46,6 +48,18 @@ public:
             std::wcout << "\nInvalid: Element wasn't found\n";
     }
 
+    void DeleteTask(std::wstring what) {
+        std::list<std::wstring>::iterator Search = Done.begin();
+        while (Search != Done.end() && what != *Search) {
+            Search++;
+        }
+        if (Search != Done.end()) {
+            Done.erase(Search);
+        }
+        else
+            std::wcout << "\nInvalid: Element wasn't found\n";
+    }
+
     void ShowList() {
         std::list<std::wstring>::iterator List1 = this->ToDo.begin();
         std::list<std::wstring>::iterator List2 = this->Doing.begin();
@@ -81,10 +95,12 @@ public:
     }
 };
 
-
-int main()
+int main(int args,char*argv[])
 {
     setlocale(0, "ukr");
+
+    bool descr = 0;
+
     std::wstring str;
     ToDoList s(L"ToDoList");
     std::wcout << "Kiwii ToDo, for Help type \"help\"\n";
@@ -93,24 +109,79 @@ int main()
         std::wcin >> str;
 
         if (str == L"add") {
+            if (descr) std::wcout << "Descr: Creating is clearer\n";
             std::wcin >> str;
             s.AddTask(str);
+
         }
-        if(str==L"doing") {
+        else if (str == L"doing") {
+            if (descr) std::wcout << "Descr: Retargeting is clearer\n";
             std::wcin >> str;
             s.DoingTask(str);
+
         }
-        if (str == L"done") {
+        else if (str == L"done") {
             std::wcin >> str;
             s.DoneTask(str);
+            if (descr) std::wcout << "Descr: Retargeting is clearer\n";
         }
-        if (str == L"help") {
-            std::wcout << L"\tadd - Add new task\n\tdoing - move current tast to list (Doing)\n\tdone - move current task to list (Done)\n\t show - show lists\n";
+        else if (str == L"help") {
+            if (descr) std::wcout << "Descr: Help is helping you\n";
+            std::wcout << L"\tadd - Add new task\n"
+                << L"\tdoing - move current tast to list (Doing)\n"
+                << L"\tdone - move current task to list (Done)\n"
+                << L"\tdelete - delete task from list (Done)\n"
+                << L"\texit - exit from application\n"
+                << L"\thelp - help you for comfortable using\n"
+                << L"\tinfo - information about app"
+                << L"\tshow - show lists\n"
+                << L"\tclear - clear console\n"
+                << L"\tsettings - set settings\n"
+                ;
+
         }
-        if (str == L"show") {
+        else if (str == L"show") {
+            if (descr) std::wcout << "Descr: Show is useful, just watch\n";
             s.ShowList();
+
+        }
+        else if (str == L"delete") {
+            if (descr) std::wcout << "Descr: Deleting is useful for cleaning interface\n";
+        std::wcin >> str;
+        s.DeleteTask(str);
+        }
+        else if (str == L"exit") {
+            if (descr) std::wcout << "Descr: Exit it's useful for retarget to terminal\n";
+            std::wcout << "Are you sure about that? (yes/no) : ";
+            std::wcin >> str;
+            if(str==L"yes")
+                break;
+            
+        }
+        else if (str == L"info") {
+            if (descr) std::wcout << "Descr: Description is useful for beginners\n";
+            std::wcout 
+                << "Author: Ivan-Kr\n"
+                << "Application version: v"<<ver<<"\n"
+                << "Launch position: " << argv[0] << "\n"
+                ;
+            
+        }
+        else if (str == L"clear") {
+            system("cls");
+            if(descr) std::wcout << "Descr: Clean for hiding your plans\n";
+        }
+        else if (str == L"settings") {
+            std::wcout << "setting: show_descr\nsetting #";
+            std::wcin >> str;
+            if (str == L"show_descr") {
+                descr = !descr;
+                std::wcout << "Setting \"Show Descreiption\" is changed\n";
+            }
+            else std::wcout << "Settings isn't changed\n";
         }
         else {
+            if (descr) std::wcout << "it's not corrrect ccmmand\n";
             std::wcout << "\nInvalid: unknown command\n";
         }
     }

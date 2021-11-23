@@ -4,6 +4,7 @@
 #include <string>
 
 class ToDoList {
+
     std::wstring name;
 
     std::list<std::wstring> ToDo;
@@ -49,7 +50,7 @@ public:
         std::list<std::wstring>::iterator List2 = this->Doing.begin();
         std::list<std::wstring>::iterator List3 = this->Done.begin();
 
-        std::wcout << "<"<<name<<">\nToDo\tDoing\tDone\n";
+        std::wcout << "<" << name << ">\nToDo\tDoing\tDone\n";
 
         while (List1 != this->ToDo.end() || List2 != this->Doing.end() || List3 != this->Done.end()) {
             if (List1 != this->ToDo.end()) {
@@ -57,72 +58,58 @@ public:
                 List1++;
             }
             else
-                std::wcout << '<';
+                std::wcout << '.';
             std::wcout << '\t';
             if (List2 != this->Doing.end()) {
                 std::wcout << *List2;
                 List2++;
             }
             else
-                std::wcout << '<';
+                std::wcout << '.';
             std::wcout << '\t';
             if (List3 != this->Done.end()) {
                 std::wcout << *List3;
                 List3++;
             }
             else
-                std::wcout << '<';
+                std::wcout << '.';
             std::wcout << "\n";
         }
 
         std::wcout << "<" << name << ">\n\n";
-    }
-
-    void SaveList(std::wstring link) {
-        std::wofstream file;
-        file.open(link);
-        file << "<Start>\n";
-        file << this->name<<L'\n';
-        file << this->ToDo.size() << L'\n';
-        file << this->Doing.size() << L'\n';
-        file << this->Done.size() << L'\n';
-        file << "<ToDo>\n";
-        
-        std::list<std::wstring>::iterator List = this->ToDo.begin();
-        while (List != ToDo.end()) {
-            file << *List<<'\n';
-            List++;
-        }
-        file << "<Doing>\n";
-        List = this->Doing.begin();
-        while (List != Doing.end()) {
-            file << *List << '\n';
-            List++;
-        }
-        file << "<Done>\n";
-        List = this->Done.begin();
-        while (List != Done.end()) {
-            file << *List << '\n';
-            List++;
-        }
-        file << "<End>\n";
-        file.close();
-        std::wcout << "\n>Saving has sucesful<\n";
     }
 };
 
 
 int main()
 {
-    ToDoList a(L"Maps");
-    a.AddTask(L"Hello");
-    a.AddTask(L"Hi");
-    a.AddTask(L"What's up");
-    a.ShowList();
-    a.DoingTask(L"Hello");
-    a.ShowList();
-    a.DoneTask(L"Hello");
-    a.ShowList();
-    a.SaveList(L"D:\\link.txt");
+    setlocale(0, "ukr");
+    std::wstring str;
+    ToDoList s(L"ToDoList");
+    std::wcout << "Kiwii ToDo, for Help type \"help\"\n";
+    while (true) {
+        std::wcout << "#:";
+        std::wcin >> str;
+
+        if (str == L"add") {
+            std::wcin >> str;
+            s.AddTask(str);
+        }
+        if(str==L"doing") {
+            std::wcin >> str;
+            s.DoingTask(str);
+        }
+        if (str == L"done") {
+            std::wcin >> str;
+            s.DoneTask(str);
+        }
+        if (str == L"help") {
+            std::wcout << L"\tadd - Add new task\n\tdoing - move current tast to list (Doing)\n\tdone - move current task to list (Done)\n\t show - show lists\n";
+        }
+        if (str == L"show") {
+            s.ShowList();
+        }
+    }
+
     return 0;
 }

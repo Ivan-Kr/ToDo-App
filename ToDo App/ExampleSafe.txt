@@ -1,8 +1,5 @@
 <Start>
 [name]
-[nToDo List]
-[nDoing List]
-[nDone List]
 <ToDo>
 [*Elements]
 [*Elements]

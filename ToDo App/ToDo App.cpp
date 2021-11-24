@@ -1,99 +1,11 @@
 ﻿// (C) Ivan-Kr github: https://github.com/Ivan-Kr
+#include "ToDoList.h"
 #include <iostream>
 #include <fstream>
 #include <list>
 #include <string>
 
-float ver = 1.05;
-
-class ToDoList {
-
-    std::wstring name;
-
-    std::list<std::wstring> ToDo;
-    std::list<std::wstring> Doing;
-    std::list<std::wstring> Done;
-public:
-    ToDoList(std::wstring name) {
-        this->name = name;
-    }
-
-    void AddTask(std::wstring todo) {
-        this->ToDo.push_back(todo);
-    }
-
-    void DoingTask(std::wstring what) {
-        std::list<std::wstring>::iterator Search = this->ToDo.begin();
-        while (Search != this->ToDo.end()&&what!=*Search) {
-            Search++;
-        }
-        if (Search != this->ToDo.end()) {
-            this->Doing.push_back(*Search);
-            this->ToDo.erase(Search);
-        }
-        else
-            std::wcout << "\nInvalid: Element wasn't found\n";
-    }
-
-    void DoneTask(std::wstring what) {
-        std::list<std::wstring>::iterator Search = Doing.begin();
-        while (Search != Doing.end() && what != *Search) {
-            Search++;
-        }
-        if (Search != Doing.end()) {
-            Done.push_back(*Search);
-            Doing.erase(Search);
-        }
-        else
-            std::wcout << "\nInvalid: Element wasn't found\n";
-    }
-
-    void DeleteTask(std::wstring what) {
-        std::list<std::wstring>::iterator Search = Done.begin();
-        while (Search != Done.end() && what != *Search) {
-            Search++;
-        }
-        if (Search != Done.end()) {
-            Done.erase(Search);
-        }
-        else
-            std::wcout << "\nInvalid: Element wasn't found\n";
-    }
-
-    void ShowList() {
-        std::list<std::wstring>::iterator List1 = this->ToDo.begin();
-        std::list<std::wstring>::iterator List2 = this->Doing.begin();
-        std::list<std::wstring>::iterator List3 = this->Done.begin();
-
-        std::wcout << "<" << name << ">\nToDo\tDoing\tDone\n";
-
-        while (List1 != this->ToDo.end() || List2 != this->Doing.end() || List3 != this->Done.end()) {
-            if (List1 != this->ToDo.end()) {
-                std::wcout << *List1;
-                List1++;
-            }
-            else
-                std::wcout << '.';
-            std::wcout << '\t';
-            if (List2 != this->Doing.end()) {
-                std::wcout << *List2;
-                List2++;
-            }
-            else
-                std::wcout << '.';
-            std::wcout << '\t';
-            if (List3 != this->Done.end()) {
-                std::wcout << *List3;
-                List3++;
-            }
-            else
-                std::wcout << '.';
-            std::wcout << "\n";
-        }
-
-        std::wcout << "<" << name << ">\n\n";
-    }
-};
+float ver = 1.5f;
 
 int main(int args,char*argv[])
 {
@@ -112,7 +24,6 @@ int main(int args,char*argv[])
             if (descr) std::wcout << "Descr: Creating is clearer\n";
             std::wcin >> str;
             s.AddTask(str);
-
         }
         else if (str == L"doing") {
             if (descr) std::wcout << "Descr: Retargeting is clearer\n";
@@ -127,15 +38,20 @@ int main(int args,char*argv[])
         }
         else if (str == L"help") {
             if (descr) std::wcout << "Descr: Help is helping you\n";
-            std::wcout << L"\tadd - Add new task\n"
+            std::wcout 
+                << L"\tadd - Add new task\n"
+                << L"\tcreate - creating new empty todo list\n"
+                << L"\tclear - clear console\n"
                 << L"\tdoing - move current tast to list (Doing)\n"
                 << L"\tdone - move current task to list (Done)\n"
-                << L"\tdelete - delete task from list (Done)\n"
+                << L"\tdelete - delete task from lists (Useful if tasks isn't same)\n"
                 << L"\texit - exit from application\n"
                 << L"\thelp - help you for comfortable using\n"
-                << L"\tinfo - information about app"
+                << L"\tinfo - information about app\n"
+                << L"\tload - loading todo list\n"
                 << L"\tshow - show lists\n"
-                << L"\tclear - clear console\n"
+                << L"\tsave - back up your list\n"
+                << L"\trename - rename your todo list\n"
                 << L"\tsettings - set settings\n"
                 ;
 
@@ -152,7 +68,7 @@ int main(int args,char*argv[])
         }
         else if (str == L"exit") {
             if (descr) std::wcout << "Descr: Exit it's useful for retarget to terminal\n";
-            std::wcout << "Are you sure about that? (yes/no) : ";
+            std::wcout << "Are you sure about that? (Current To-Do List will be erased) (\"yes\"/not \"yes\") : ";
             std::wcin >> str;
             if(str==L"yes")
                 break;
@@ -180,9 +96,41 @@ int main(int args,char*argv[])
             }
             else std::wcout << "Settings isn't changed\n";
         }
+        else if (str == L"save") {
+            if (descr) std::wcout << "Descr: Back up is very important item\n";
+            _wsystem(L"dir");
+            std::wcout << "Name and format file : ";
+            std::wcin >> str;
+            s.SaveList(str);
+            std::wcout << ">File was saved<\n";
+        }
+        else if (str == L"rename") {
+            if (descr) std::wcout << "Descr: Why not?\n";
+            std::wcin >> str;
+            s.Rename(str);
+        }
+        else if (str == L"load") {
+            if (descr) std::wcout << "Descr: Loading Back up is so quickly\n";
+            std::wcout << "Are you sure about that? (Current To-Do List will be erased) (\"yes\"/not \"yes\") : ";
+            std::wcin >> str;
+            if (str == L"yes") {
+                _wsystem(L"dir");
+                std::wcout << "Name and format file : ";
+                std::wcin >> str;
+                s.LoadList(str);
+            }
+        }
+        else if (str == L"create") {
+            if (descr) std::wcout << "Descr: Whose need start new to-do list\n";
+            std::wcout << "Are you sure about that? (Current To-Do List will be erased) (\"yes\"/not \"yes\") : ";
+            std::wcin >> str;
+            if (str == L"yes") {
+                s.CreateNewList();
+            }
+        }
         else {
-            if (descr) std::wcout << "it's not corrrect ccmmand\n";
-            std::wcout << "\nInvalid: unknown command\n";
+            if (descr) std::wcout << "Descr: it's not correct command\n";
+            std::wcout << "\tError: unknown command\n";
         }
     }
 

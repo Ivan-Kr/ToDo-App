@@ -18,10 +18,13 @@
     <ClCompile Include="ToDo App.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="ToDoList.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="ExampleSafe.txt">
-      <Filter>Исходные файлы</Filter>
-    </Text>
+    <ClInclude Include="ToDoList.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

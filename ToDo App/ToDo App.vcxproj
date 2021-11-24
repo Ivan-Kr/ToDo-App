@@ -140,9 +140,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ToDo App.cpp" />
+    <ClCompile Include="ToDoList.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="ExampleSafe.txt" />
+    <ClInclude Include="ToDoList.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

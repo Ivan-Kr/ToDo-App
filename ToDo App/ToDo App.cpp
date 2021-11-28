@@ -39,6 +39,7 @@ int main(int args,char*argv[])
         else if (str == L"help") {
             if (descr) std::wcout << "Descr: Help is helping you\n";
             std::wcout 
+                << L"\ttutorial - set settings\n"
                 << L"\tadd - Add new task\n"
                 << L"\tcreate - creating new empty todo list\n"
                 << L"\tclear - clear console\n"
@@ -127,6 +128,12 @@ int main(int args,char*argv[])
             if (str == L"yes") {
                 s.CreateNewList();
             }
+        }
+        else if (str == L"tutorial") {
+        std::wcout << "How to use :\n"
+            <<"you can made own to - do tableand manipulate with that\n"
+            <<"it's very flexible and it can out in multiple languange\n";
+        _wsystem(L"pause");
         }
         else {
             if (descr) std::wcout << "Descr: it's not correct command\n";

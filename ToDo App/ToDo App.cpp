@@ -6,7 +6,7 @@
 #include <list>
 
 
-float ver = 1.5f;
+float ver = 2.0f;
 
 int main(int args,char*argv[])
 {

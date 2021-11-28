@@ -167,20 +167,20 @@ void SetRussia() {
 	HelpRename = L"переименовует название То-До листа\n";
 	HelpLoad = L"выгружает То-До лист\n";
 	HelpCreate = L"создаёт новый пустой То-До лист\n";
-	HelpSettings = L"налашувати налаштування\n";
-	HelpTutorial = L"вчить тебе, як користуватися програмою\n";
+	HelpSettings = L"настроить настройки\n";
+	HelpTutorial = L"учить тебя, как пользоваться програмой\n";
 
 	////////////////////////////////////////////
 
-	SettingsNothingChange = L"Налаштування не змiнилися\n";
-	SettingsShowDescription = L"показати опис";
-	SettingsShowDescriptionChange = L"Налаштунок \"Показати Опис\" змiнився\n";
-	SettingsSetLanguange = L"змiнити мову виведення";
-	SettingsSetLanguangeChange = L"Налаштунок \"Змiнити Мову Виведення\" is змiнився\n";
+	SettingsNothingChange = L"Настройки не змiнилися\n";
+	SettingsShowDescription = L"показать описание";
+	SettingsShowDescriptionChange = L"Настройка \"Показать Описание\" изменилось\n";
+	SettingsSetLanguange = L"изменить язык вивода";
+	SettingsSetLanguangeChange = L"Настройка \"Изменить Язык Вивода\" изменилось\n";
 
 	////////////////////////////////////////////
 
-	Tutorial = L"Чому :\nти можеш зробити свiй То-До лист i манiпулюватиз ними\nце дуже гнучко i може виводити рiзнi мови (якi?, напишiть 'settings')\nЯк користуватися :\nти пишеш команди i агрументи, якщо вони будуть\nвiд твоїх команд, програма робить конкретнi дiї (детальнiше набравши 'help')\n";
+	Tutorial = L"Почему :\nты можешь сделать свой То-До лист и манипулировать с ними\nэто очень гнучкой и может виводить разные языки (какие?, напишыте 'settings')\nКак пользоваться :\nты пишешь команди и аргументы, есль они будут\nот твоих команд, програма делает конкретные действие (детальнее напечатая 'help')\n";
 }
 
 void SetUkraine() {
@@ -239,7 +239,7 @@ void SetUkraine() {
 	SettingsShowDescription = L"показати опис";
 	SettingsShowDescriptionChange = L"Налаштунок \"Показати Опис\" змiнився\n";
 	SettingsSetLanguange = L"змiнити мову виведення";
-	SettingsSetLanguangeChange = L"Налаштунок \"Змiнити Мову Виведення\" is змiнився\n";
+	SettingsSetLanguangeChange = L"Налаштунок \"Змiнити Мову Виведення\" змiнився\n";
 
 	////////////////////////////////////////////
 

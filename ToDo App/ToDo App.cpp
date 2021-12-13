@@ -5,7 +5,7 @@
 #include <fstream>
 #include <list>
 
-float ver = 2.3f;
+float ver = 2.4f;
 
 int main(int args,char*argv[])
 {

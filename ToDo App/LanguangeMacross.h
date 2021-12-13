@@ -1,62 +1,62 @@
 #pragma once
 #include <string>
 
-std::string locale="eng";
+std::string locale;
 
-std::wstring StrInfoAuthor = L"Author";
-std::wstring StrInfoAppVersion = L"Application version";
-std::wstring StrInfoLaunchPosition = L"Launch position";
+std::wstring StrInfoAuthor;
+std::wstring StrInfoAppVersion;
+std::wstring StrInfoLaunchPosition;
 
-std::wstring StrQuestFile = L"Name and format file : ";
+std::wstring StrQuestFile;
 
-std::wstring StrWarning = L"Are you sure about that? (Current To-Do List will be erased) (\"yes\"/not \"yes\") : ";
-
-////////////////////////////////////////////
-
-std::wstring DescrAdd = L"Descr: Creating is clearer\n";
-std::wstring DescrDoing = L"Descr: Retargeting is clearer\n";
-std::wstring DescrDone = L"Descr: Retargeting is clearer\n";
-std::wstring DescrHelp = L"Descr: Help is helping you\n";
-std::wstring DescrShow = L"Descr: Show is useful, just watch\n";
-std::wstring DescrDelete = L"Descr: Deleting is useful for cleaning interface\n";
-std::wstring DescrExit = L"Descr: Exit it's useful for retarget to terminal\n";
-std::wstring DescrInfo = L"Descr: Description is useful for beginners\n";
-std::wstring DescrClear = L"Descr: Clean for hiding your plans\n";
-std::wstring DescrSave = L"Descr: Back up is very important item\n";
-std::wstring DescrRename = L"Descr: Why not?\n";
-std::wstring DescrLoad = L"Descr: Loading Back up is so quickly\n";
-std::wstring DescrCreate = L"Descr: Whose need start new to-do list\n";
-std::wstring DescrInvalid = L"Descr: it's not correct command\n";
+std::wstring StrWarning;
 
 ////////////////////////////////////////////
 
-std::wstring HelpAdd = L"Add new task\n";
-std::wstring HelpDoing = L"move current tast to list (Doing)\n";
-std::wstring HelpDone = L"move current task to list (Done)\n";
-std::wstring HelpHelp = L"help you for comfortable using\n";
-std::wstring HelpShow = L"show lists\n";
-std::wstring HelpDelete = L"delete task from lists (Useful if tasks isn't same)\n";
-std::wstring HelpExit = L"exit from application\n";
-std::wstring HelpInfo = L"information about app\n";
-std::wstring HelpClear = L"clear console\n";
-std::wstring HelpSave = L"back up your list\n";
-std::wstring HelpRename = L"rename your todo list\n";
-std::wstring HelpLoad = L"loading todo list\n";
-std::wstring HelpCreate = L"creating new empty todo list\n";
-std::wstring HelpSettings = L"set settings\n";
-std::wstring HelpTutorial = L"learn you, how use the application\n";
+std::wstring DescrAdd;
+std::wstring DescrDoing;
+std::wstring DescrDone;
+std::wstring DescrHelp;
+std::wstring DescrShow;
+std::wstring DescrDelete;
+std::wstring DescrExit;
+std::wstring DescrInfo;
+std::wstring DescrClear;
+std::wstring DescrSave;
+std::wstring DescrRename;
+std::wstring DescrLoad;
+std::wstring DescrCreate;
+std::wstring DescrInvalid;
 
 ////////////////////////////////////////////
 
-std::wstring SettingsNothingChange = L"Settings isn't changed\n";
-std::wstring SettingsShowDescription = L"show description";
-std::wstring SettingsShowDescriptionChange = L"Setting \"Show Descreiption\" is changed";
-std::wstring SettingsSetLanguange = L"change languange";
-std::wstring SettingsSetLanguangeChange = L"Setting \"Change Languange\" is changed";
+std::wstring HelpAdd;
+std::wstring HelpDoing;
+std::wstring HelpDone;
+std::wstring HelpHelp;
+std::wstring HelpShow;
+std::wstring HelpDelete;
+std::wstring HelpExit;
+std::wstring HelpInfo;
+std::wstring HelpClear;
+std::wstring HelpSave;
+std::wstring HelpRename;
+std::wstring HelpLoad;
+std::wstring HelpCreate;
+std::wstring HelpSettings;
+std::wstring HelpTutorial;
 
 ////////////////////////////////////////////
 
-std::wstring Tutorial = L"Why :\n you can made own to-do table and manipulate with that\nit's very flexible and it can out in multiple languange\nHow to use :\nyou type a command and argumet, if it's had\nfrom your command, application make current action (about it type 'help')\n";
+std::wstring SettingsNothingChange;
+std::wstring SettingsShowDescription;
+std::wstring SettingsShowDescriptionChange;
+std::wstring SettingsSetLanguange;
+std::wstring SettingsSetLanguangeChange;
+
+////////////////////////////////////////////
+
+std::wstring Tutorial;
 
 void SetEnglish() {
 	locale = "eng";

@@ -6,6 +6,7 @@
 #include <stdio.h>
 
 #define max(a,b) a>b?a:b
+#define min(a,b) a<b?a:b
 
 class ToDoList {
 
@@ -15,7 +16,6 @@ class ToDoList {
     std::list<std::wstring> Doing;
     std::list<std::wstring> Done;
 
-    int length = 1;
 public:
     ToDoList(std::wstring name) {
         this->name = name;
@@ -31,7 +31,7 @@ public:
 
     void DeleteTask(std::wstring what);
 
-    void ShowList();
+    void ShowVerticalList();
 
     void SaveList(std::wstring dir);
 

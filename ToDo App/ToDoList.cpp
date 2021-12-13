@@ -77,44 +77,53 @@ void ToDoList::DeleteTask(std::wstring what)
     }
 }
 
-void ToDoList::ShowList()
+void ToDoList::ShowVerticalList()
 {
     std::list<std::wstring>::iterator List1 = this->ToDo.begin();
     std::list<std::wstring>::iterator List2 = this->Doing.begin();
     std::list<std::wstring>::iterator List3 = this->Done.begin();
+    /////////////////////////////////////////////
 
     std::wcout << "<" << name << ">\nToDo";
-    for (int i = 0;i < length;i++)std::wcout << '\t';
+    std::wcout << '\t';
     std::wcout << "Doing";
-    for (int i = 0;i < length;i++)std::wcout << '\t';
+    std::wcout << '\t';
     std::wcout<<"Done\n";
 
+    /////////////////////////////////////////////
+
     while (List1 != this->ToDo.end() || List2 != this->Doing.end() || List3 != this->Done.end()) {
+
         if (List1 != this->ToDo.end()) {
             std::wcout << *List1;
             List1++;
         }
-        else
-            std::wcout << '.';
-        for (int i = 0;i < length;i++)std::wcout << '\t';
+        else std::wcout << '_';
+
+        /////////////////////////////////////////////
+
+        std::wcout << '\t';
         if (List2 != this->Doing.end()) {
             std::wcout << *List2;
             List2++;
         }
-        else
-            std::wcout << '.';
-        for (int i = 0;i < length;i++)std::wcout << '\t';
+        else std::wcout << '_';
+
+        /////////////////////////////////////////////
+
+        std::wcout << '\t';
         if (List3 != this->Done.end()) {
             std::wcout << *List3;
             List3++;
 
         }
-        else
-            std::wcout << '.';
+        else std::wcout << '_';
         std::wcout << "\n";
     }
 
+    /////////////////////////////////////////////
     std::wcout << "<" << name << ">\n\n";
+    
 }
 
 void ToDoList::SaveList(std::wstring dir)

@@ -5,8 +5,7 @@
 #include <fstream>
 #include <list>
 
-
-float ver = 2.0f;
+float ver = 2.3f;
 
 int main(int args,char*argv[])
 {
@@ -22,12 +21,12 @@ int main(int args,char*argv[])
         std::wcin >> str;
 
         if (str == L"add") {
-            if (descr) std::wcout << DescrAdd;
+            if (descr) std::wcout << "Descr: " << DescrAdd << '\n';
             std::wcin >> str;
             s.AddTask(str);
         }
         else if (str == L"doing") {
-            if (descr) std::wcout << DescrDoing;
+            if (descr) std::wcout << "Descr: " << DescrDoing << '\n';
             std::wcin >> str;
             s.DoingTask(str);
 
@@ -35,41 +34,41 @@ int main(int args,char*argv[])
         else if (str == L"done") {
             std::wcin >> str;
             s.DoneTask(str);
-            if (descr) std::wcout << DescrDone;
+            if (descr) std::wcout << "Descr: " << DescrDone << '\n';
         }
         else if (str == L"help") {
-            if (descr) std::wcout << DescrHelp;
+            if (descr) std::wcout << "Descr: " << DescrHelp << '\n';
             std::wcout 
-                << L"\ttutorial - "<<HelpTutorial
-                << L"\tadd - "<<HelpAdd
-                << L"\tcreate - " << HelpCreate
-                << L"\tclear - " << HelpClear
-                << L"\tdoing - " << HelpDoing
-                << L"\tdone - " << HelpDone
-                << L"\tdelete - " << HelpDelete
-                << L"\texit - " << HelpExit
-                << L"\thelp - " << HelpHelp
-                << L"\tinfo - " << HelpInfo
-                << L"\tload - " << HelpLoad
-                << L"\tshow - " << HelpShow
-                << L"\tsave - " << HelpSave
-                << L"\trename - " << HelpRename
-                << L"\tsettings - " << HelpSettings
+                << L"\ttutorial - "<<HelpTutorial << "\n"
+                << L"\tadd - "<<HelpAdd << "\n"
+                << L"\tcreate - " << HelpCreate << "\n"
+                << L"\tclear - " << HelpClear << "\n"
+                << L"\tdoing - " << HelpDoing << "\n"
+                << L"\tdone - " << HelpDone << "\n"
+                << L"\tdelete - " << HelpDelete << "\n"
+                << L"\texit - " << HelpExit << "\n"
+                << L"\thelp - " << HelpHelp << "\n"
+                << L"\tinfo - " << HelpInfo << "\n"
+                << L"\tload - " << HelpLoad << "\n"
+                << L"\tshow - " << HelpShow << "\n"
+                << L"\tsave - " << HelpSave << "\n"
+                << L"\trename - " << HelpRename << "\n"
+                << L"\tsettings - " << HelpSettings << "\n"
                 ;
 
         }
         else if (str == L"show") {
-            if (descr) std::wcout << DescrShow;
-            s.ShowList();
+            if (descr) std::wcout <<"Descr: " << DescrShow << '\n';
+            s.ShowVerticalList();
 
         }
         else if (str == L"delete") {
-            if (descr) std::wcout << DescrDelete;
+            if (descr) std::wcout << "Descr: " << DescrDelete << '\n';
         std::wcin >> str;
         s.DeleteTask(str);
         }
         else if (str == L"exit") {
-            if (descr) std::wcout << DescrExit;
+            if (descr) std::wcout << "Descr: " << DescrExit << '\n';
             std::wcout << StrWarning;
             std::wcin >> str;
             if(str==L"yes")
@@ -77,17 +76,16 @@ int main(int args,char*argv[])
             
         }
         else if (str == L"info") {
-            if (descr) std::wcout << DescrInfo;
+            if (descr) std::wcout << "Descr: " << DescrInfo<<'\n';
             std::wcout 
                 << StrInfoAuthor<<": Ivan-Kr\n"
                 << StrInfoAppVersion << ": v"<<ver<<"\n"
                 << StrInfoLaunchPosition << ": " << argv[0] << "\n"
                 ;
-            
         }
         else if (str == L"clear") {
             system("cls");
-            if(descr) std::wcout << DescrClear;
+            if(descr) std::wcout << "Descr: " << DescrClear;
         }
         else if (str == L"settings") {
             std::wcout 
@@ -120,7 +118,7 @@ int main(int args,char*argv[])
             else std::wcout << SettingsNothingChange;
         }
         else if (str == L"save") {
-            if (descr) std::wcout << DescrSave;
+            if (descr) std::wcout << "Descr: " << DescrSave << '\n';
             _wsystem(L"dir");
             std::wcout << StrQuestFile;
             std::wcin >> str;
@@ -128,12 +126,12 @@ int main(int args,char*argv[])
             std::wcout << ">File was saved<\n";
         }
         else if (str == L"rename") {
-            if (descr) std::wcout << DescrRename;
+            if (descr) std::wcout << "Descr: " << DescrRename << '\n';
             std::wcin >> str;
             s.Rename(str);
         }
         else if (str == L"load") {
-            if (descr) std::wcout << DescrLoad;
+            if (descr) std::wcout << "Descr: " << DescrLoad << '\n';
             std::wcout << StrWarning;
             std::wcin >> str;
             if (str == L"yes") {
@@ -144,7 +142,7 @@ int main(int args,char*argv[])
             }
         }
         else if (str == L"create") {
-            if (descr) std::wcout << DescrCreate;
+            if (descr) std::wcout << "Descr: " << DescrCreate << '\n';
             std::wcout << StrWarning;
             std::wcin >> str;
             if (str == L"yes") {
@@ -152,11 +150,12 @@ int main(int args,char*argv[])
             }
         }
         else if (str == L"tutorial") {
-
+        std::wcout << "Tutorial: \n"<<Tutorial;
         _wsystem(L"pause");
         }
+        
         else {
-            if (descr) std::wcout << DescrInvalid;
+            if (descr) std::wcout << "Descr: " << DescrInvalid << '\n';
             std::wcout << "\tError: unknown command\n";
         }
     }

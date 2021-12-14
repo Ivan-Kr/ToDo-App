@@ -181,6 +181,8 @@ void SetRussia() {
 	SettingsShowDescriptionChange = L"Настройка \"Показать Описание\" изменилось\n";
 	SettingsSetLanguange = L"изменить язык вивода";
 	SettingsSetLanguangeChange = L"Настройка \"Изменить Язык Вивода\" изменилось\n";
+	SettingsSetIsVertical = L"change vision on todo list";
+	SettingsSetIsVerticalChange = L"Setting \"Change Vision\" is changed\n";
 
 	////////////////////////////////////////////
 
@@ -241,9 +243,11 @@ void SetUkraine() {
 
 	SettingsNothingChange = L"Налаштування не змiнилися\n";
 	SettingsShowDescription = L"показати опис";
-	SettingsShowDescriptionChange = L"Налаштунок \"Показати Опис\" змiнився\n";
+	SettingsShowDescriptionChange = L"Налаштунок \"Показати Опис\" був зміненим\n";
 	SettingsSetLanguange = L"змiнити мову виведення";
-	SettingsSetLanguangeChange = L"Налаштунок \"Змiнити Мову Виведення\" змiнився\n";
+	SettingsSetLanguangeChange = L"Налаштунок \"Змiнити Мову Виведення\" був зміненим\n";
+	SettingsSetIsVertical = L"змінити вигляд на То-До листа";
+	SettingsSetIsVerticalChange = L"Налаштунок \"Змінити вигляд\" був зміненим\n";
 
 	////////////////////////////////////////////
 

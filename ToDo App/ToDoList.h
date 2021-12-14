@@ -33,11 +33,19 @@ public:
 
     void ShowVerticalList();
 
+    void ShowHorizontalList();
+
     void SaveList(std::wstring dir);
 
     void Rename(std::wstring name) {
         this->name = name;
     }
+
+    std::wstring Name() {
+        return name;
+    }
+
+    int MaxString();
 
     void LoadList(std::wstring dir);
 

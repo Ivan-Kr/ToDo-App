@@ -5,39 +5,48 @@
 #include <fstream>
 #include <list>
 
+// я буду скоріше творити мультитаблицю.
+// це буде функція!!!!!!!!!
+// можна переключатися між таблицями скільки хочеш, а так, як ненадійні типи данних немає, то
+// автоматично виріжеться.
+
 float ver = 2.4f;
 
 int main(int args,char*argv[])
 {
     setlocale(0, locale.c_str());
 
-    bool descr = 0;
+    SetEnglish();
 
-    std::wstring str;
+    bool settings_is_horiz = 0;
+    bool settings_descr = 0;
+
+    std::wstring command_stroke;
+    std::list<ToDoList>panel;
     ToDoList s(L"ToDoList");
     std::wcout << L"Kiwii ToDo, for Help type \"help\", for Tutorial type \"tutorial\"\n";
     while (true) {
         std::wcout << "#:";
-        std::wcin >> str;
+        std::wcin >> command_stroke;
 
-        if (str == L"add") {
-            if (descr) std::wcout << "Descr: " << DescrAdd << '\n';
-            std::wcin >> str;
-            s.AddTask(str);
+        if (command_stroke == L"add") {
+            if (settings_descr) std::wcout << "Descr: " << DescrAdd << '\n';
+            std::wcin >> command_stroke;
+            s.AddTask(command_stroke);
         }
-        else if (str == L"doing") {
-            if (descr) std::wcout << "Descr: " << DescrDoing << '\n';
-            std::wcin >> str;
-            s.DoingTask(str);
+        else if (command_stroke == L"doing") {
+            if (settings_descr) std::wcout << "Descr: " << DescrDoing << '\n';
+            std::wcin >> command_stroke;
+            s.DoingTask(command_stroke);
 
         }
-        else if (str == L"done") {
-            std::wcin >> str;
-            s.DoneTask(str);
-            if (descr) std::wcout << "Descr: " << DescrDone << '\n';
+        else if (command_stroke == L"done") {
+            std::wcin >> command_stroke;
+            s.DoneTask(command_stroke);
+            if (settings_descr) std::wcout << "Descr: " << DescrDone << '\n';
         }
-        else if (str == L"help") {
-            if (descr) std::wcout << "Descr: " << DescrHelp << '\n';
+        else if (command_stroke == L"help") {
+            if (settings_descr) std::wcout << "Descr: " << DescrHelp << '\n';
             std::wcout 
                 << L"\ttutorial - "<<HelpTutorial << "\n"
                 << L"\tadd - "<<HelpAdd << "\n"
@@ -57,105 +66,141 @@ int main(int args,char*argv[])
                 ;
 
         }
-        else if (str == L"show") {
-            if (descr) std::wcout <<"Descr: " << DescrShow << '\n';
-            s.ShowVerticalList();
-
+        else if (command_stroke == L"show") {
+            if (settings_descr) std::wcout <<"Descr: " << DescrShow << '\n';
+            settings_is_horiz ? s.ShowHorizontalList() : s.ShowVerticalList();
         }
-        else if (str == L"delete") {
-            if (descr) std::wcout << "Descr: " << DescrDelete << '\n';
-        std::wcin >> str;
-        s.DeleteTask(str);
+        else if (command_stroke == L"delete") {
+            if (settings_descr) std::wcout << "Descr: " << DescrDelete << '\n';
+        std::wcin >> command_stroke;
+        s.DeleteTask(command_stroke);
         }
-        else if (str == L"exit") {
-            if (descr) std::wcout << "Descr: " << DescrExit << '\n';
+        else if (command_stroke == L"exit") {
+            if (settings_descr) std::wcout << "Descr: " << DescrExit << '\n';
             std::wcout << StrWarning;
-            std::wcin >> str;
-            if(str==L"yes")
+            std::wcin >> command_stroke;
+            if(command_stroke==L"yes")
                 break;
             
         }
-        else if (str == L"info") {
-            if (descr) std::wcout << "Descr: " << DescrInfo<<'\n';
+        else if (command_stroke == L"info") {
+            if (settings_descr) std::wcout << "Descr: " << DescrInfo<<'\n';
             std::wcout 
                 << StrInfoAuthor<<": Ivan-Kr\n"
                 << StrInfoAppVersion << ": v"<<ver<<"\n"
                 << StrInfoLaunchPosition << ": " << argv[0] << "\n"
                 ;
         }
-        else if (str == L"clear") {
+        else if (command_stroke == L"clear") {
             system("cls");
-            if(descr) std::wcout << "Descr: " << DescrClear;
+            if(settings_descr) std::wcout << "Descr: " << DescrClear;
         }
-        else if (str == L"settings") {
+        else if (command_stroke == L"settings") {
             std::wcout 
                 << "\nsetting: show_description - "<<SettingsShowDescription
                 << "\nsetting: set_languange - " << SettingsSetLanguange
+                << "\nsetting: set_vertical_list - " << SettingsSetIsVertical
                 <<"\nsetting #";
-            std::wcin >> str;
-            if (str == L"show_description") {
-                descr = !descr;
+            std::wcin >> command_stroke;
+            if (command_stroke == L"show_description") {
+                settings_descr = !settings_descr;
                 std::wcout << SettingsShowDescriptionChange;
             }
-            else if (str == L"set_languange") {
+            else if (command_stroke == L"set_languange") {
                 std::wcout << "Languange:\n'eng' - English\n'rus' - Russian\n'ukr' - Ukranian\n>";
-                std::wcin >> str;
-                if (str == L"eng") { 
+                std::wcin >> command_stroke;
+                if (command_stroke == L"eng") { 
                     SetEnglish(); 
                     std::wcout << SettingsSetLanguangeChange;
                 }
-                else if (str == L"rus") {
+                else if (command_stroke == L"rus") {
                     SetRussia();
                     std::wcout << SettingsSetLanguangeChange;
                 }
-                else if (str == L"ukr") { 
+                else if (command_stroke == L"ukr") { 
                     SetUkraine();
                     std::wcout << SettingsSetLanguangeChange;
                 }
                 else std::wcout << SettingsNothingChange;
 
             }
+            else if (command_stroke == L"set_vertical_list") {
+                settings_is_horiz = !settings_is_horiz;
+                std::wcout << SettingsSetIsVerticalChange;
+            }
             else std::wcout << SettingsNothingChange;
         }
-        else if (str == L"save") {
-            if (descr) std::wcout << "Descr: " << DescrSave << '\n';
+        else if (command_stroke == L"save") {
+            if (settings_descr) std::wcout << "Descr: " << DescrSave << '\n';
             _wsystem(L"dir");
             std::wcout << StrQuestFile;
-            std::wcin >> str;
-            s.SaveList(str);
+            std::wcin >> command_stroke;
+            s.SaveList(command_stroke);
             std::wcout << ">File was saved<\n";
         }
-        else if (str == L"rename") {
-            if (descr) std::wcout << "Descr: " << DescrRename << '\n';
-            std::wcin >> str;
-            s.Rename(str);
+        else if (command_stroke == L"rename") {
+            if (settings_descr) std::wcout << "Descr: " << DescrRename << '\n';
+            std::wcin >> command_stroke;
+            s.Rename(command_stroke);
         }
-        else if (str == L"load") {
-            if (descr) std::wcout << "Descr: " << DescrLoad << '\n';
+        else if (command_stroke == L"load") {
+            if (settings_descr) std::wcout << "Descr: " << DescrLoad << '\n';
             std::wcout << StrWarning;
-            std::wcin >> str;
-            if (str == L"yes") {
+            std::wcin >> command_stroke;
+            if (command_stroke == L"yes") {
                 _wsystem(L"dir");
                 std::wcout << StrQuestFile;
-                std::wcin >> str;
-                s.LoadList(str);
+                std::wcin >> command_stroke;
+                s.LoadList(command_stroke);
             }
         }
-        else if (str == L"create") {
-            if (descr) std::wcout << "Descr: " << DescrCreate << '\n';
+        else if (command_stroke == L"create") {
+            if (settings_descr) std::wcout << "Descr: " << DescrCreate << '\n';
             std::wcout << StrWarning;
-            std::wcin >> str;
-            if (str == L"yes") {
+            std::wcin >> command_stroke;
+            if (command_stroke == L"yes") {
                 s.CreateNewList();
             }
         }
-        else if (str == L"tutorial") {
+        else if (command_stroke == L"tutorial") {
         std::wcout << "Tutorial: \n"<<Tutorial;
         _wsystem(L"pause");
         }
-        
+        /*else if (command_stroke == L"panel") {
+            std::wcout << "Panel: " << L"Kiwii Panel, for Help type \"help\"\n";
+            while (true) {
+                std::wcout << "#.Panel:";
+                std::wcin >> command_stroke;
+                if (command_stroke == L"back") { break; }
+                else if (command_stroke == L"help") { 
+                    std::wcout
+                        << L"\tback - " << HelpTutorial << "\n"
+                        << L"\tcreate - " << HelpCreate << "\n"
+                        << L"\tclear - " << HelpClear << "\n"
+                        << L"\tdoing - " << HelpDoing << "\n"
+                        << L"\tdone - " << HelpDone << "\n"
+                        << L"\tdelete - " << HelpDelete << "\n"
+                        << L"\texit - " << HelpExit << "\n"
+                        << L"\thelp - " << HelpHelp << "\n"
+                        << L"\tinfo - " << HelpInfo << "\n"
+                        << L"\tload - " << HelpLoad << "\n"
+                        << L"\tshow - " << HelpShow << "\n"
+                        << L"\tsave - " << HelpSave << "\n"
+                        << L"\trename - " << HelpRename << "\n"
+                        << L"\tsettings - " << HelpSettings << "\n"
+                        ;
+                }
+                else if (command_stroke == L"add") {
+                    for (auto i = panel.begin();i != panel.end();i++) {
+                        std::wcout<<i->
+                    }
+                }
+                else std::wcout << "\tError.Panel: unknown command\n";
+            }
+            std::wcout << L"Kiwii ToDo, for Help type \"help\", for Tutorial type \"tutorial\"\n";
+        } */
         else {
-            if (descr) std::wcout << "Descr: " << DescrInvalid << '\n';
+            if (settings_descr) std::wcout << "Descr: " << DescrInvalid << '\n';
             std::wcout << "\tError: unknown command\n";
         }
     }

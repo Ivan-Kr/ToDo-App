@@ -1,5 +1,7 @@
 #include "ToDoList.h"
 
+const unsigned int size_tab = 6;
+
 void ToDoList::DoingTask(std::wstring what)
 {
     std::list<std::wstring>::iterator Search = this->ToDo.begin();
@@ -82,6 +84,8 @@ void ToDoList::ShowVerticalList()
     std::list<std::wstring>::iterator List1 = this->ToDo.begin();
     std::list<std::wstring>::iterator List2 = this->Doing.begin();
     std::list<std::wstring>::iterator List3 = this->Done.begin();
+
+    int mxstr = MaxString();
     /////////////////////////////////////////////
 
     std::wcout << "<" << name << ">\nToDo";
@@ -99,19 +103,19 @@ void ToDoList::ShowVerticalList()
             List1++;
         }
         else std::wcout << '_';
+        std::wcout << '\t';
 
         /////////////////////////////////////////////
 
-        std::wcout << '\t';
         if (List2 != this->Doing.end()) {
             std::wcout << *List2;
             List2++;
         }
         else std::wcout << '_';
+        std::wcout << '\t';
 
         /////////////////////////////////////////////
 
-        std::wcout << '\t';
         if (List3 != this->Done.end()) {
             std::wcout << *List3;
             List3++;
@@ -124,6 +128,46 @@ void ToDoList::ShowVerticalList()
     /////////////////////////////////////////////
     std::wcout << "<" << name << ">\n\n";
     
+}
+
+void ToDoList::ShowHorizontalList()
+{
+    std::list<std::wstring>::iterator iter;
+    iter = ToDo.begin();
+    int i = 0;
+    std::wcout << "<" << name << ">";
+    std::wcout << "\nToDo: ";
+    while (i<ToDo.size()) {
+        if (iter != ToDo.end()) {
+            std::wcout << *iter << ",\t";
+            iter++;
+            i++;
+        }
+        else break;
+    }
+    iter = Doing.begin();
+    i = 0;
+    std::wcout << "\nDoing: ";
+    while ( i < Doing.size()) {
+        if (iter != Doing.end()) {
+            std::wcout << *iter << ",\t";
+            iter++;
+            i++;
+        }
+        else break;
+    }
+    iter = Done.begin();
+    i = 0;
+    std::wcout << "\nDone: ";
+    while (i < Done.size()) {
+        if (iter != Done.end()) {
+            std::wcout << *iter << ",\t";
+            iter++;
+            i++;
+        }
+        else break;
+    }
+    std::wcout << "\n<" << name << ">\n";
 }
 
 void ToDoList::SaveList(std::wstring dir)
@@ -196,6 +240,29 @@ void ToDoList::LoadList(std::wstring dir)
         std::wcout << ">Load files was sucessful<\n";
     }
     else std::wcout << "\tError: Application couldn't open file\n";
+}
+
+int ToDoList::MaxString()
+{
+    std::list<std::wstring>::iterator list;
+    list = this->ToDo.begin();
+    int mx=-1;
+    while (list != this->ToDo.end()) {
+        mx = max(mx, list->size());
+        list++;
+    }
+    list = this->Doing.begin();
+    while (list != this->Doing.end()) {
+        mx = max(mx, list->size());
+        list++;
+    }
+    list = this->Done.begin();
+    while (list != this->Done.end()) {
+        mx = max(mx, list->size());
+        list++;
+    }
+
+    return mx;
 }
 
 void ToDoList::CreateNewList()

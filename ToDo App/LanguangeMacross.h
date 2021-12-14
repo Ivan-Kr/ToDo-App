@@ -53,6 +53,8 @@ std::wstring SettingsShowDescription;
 std::wstring SettingsShowDescriptionChange;
 std::wstring SettingsSetLanguange;
 std::wstring SettingsSetLanguangeChange;
+std::wstring SettingsSetIsVertical;
+std::wstring SettingsSetIsVerticalChange;
 
 ////////////////////////////////////////////
 
@@ -114,6 +116,8 @@ void SetEnglish() {
 	SettingsShowDescriptionChange = L"Setting \"Show Descreiption\" is changed\n";
 	SettingsSetLanguange = L"change languange output";
 	SettingsSetLanguangeChange = L"Setting \"Change Languange\" is changed\n";
+	SettingsSetIsVertical = L"change vision on todo list";
+	SettingsSetIsVerticalChange = L"Setting \"Change Vision\" is changed\n";
 
 	////////////////////////////////////////////
 

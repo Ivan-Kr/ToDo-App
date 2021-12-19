@@ -45,6 +45,9 @@ std::wstring HelpLoad;
 std::wstring HelpCreate;
 std::wstring HelpSettings;
 std::wstring HelpTutorial;
+std::wstring HelpPanel;
+std::wstring HelpSelect;
+std::wstring HelpBack;
 
 ////////////////////////////////////////////
 
@@ -55,6 +58,10 @@ std::wstring SettingsSetLanguange;
 std::wstring SettingsSetLanguangeChange;
 std::wstring SettingsSetIsVertical;
 std::wstring SettingsSetIsVerticalChange;
+
+////////////////////////////////////////////
+
+//std::wstring PanelHelp;
 
 ////////////////////////////////////////////
 
@@ -75,39 +82,42 @@ void SetEnglish() {
 
 	////////////////////////////////////////////
 
-	DescrAdd = L"Descr: Creating is clearer\n";
-	DescrDoing = L"Descr: Retargeting is clearer\n";
-	DescrDone = L"Descr: Retargeting is clearer\n";
-	DescrHelp = L"Descr: Help is helping you\n";
-	DescrShow = L"Descr: Show is useful, just watch\n";
-	DescrDelete = L"Descr: Deleting is useful for cleaning interface\n";
-	DescrExit = L"Descr: Exit it's useful for retarget to terminal\n";
-	DescrInfo = L"Descr: Description is useful for beginners\n";
-	DescrClear = L"Descr: Clean for hiding your plans\n";
-	DescrSave = L"Descr: Back up is very important\n";
-	DescrRename = L"Descr: Why not?\n";
-	DescrLoad = L"Descr: Loading Back up is so quickly\n";
-	DescrCreate = L"Descr: Whose need start new to-do list\n";
-	DescrInvalid = L"Descr: it's not correct command\n";
-	DescrClear = L"Descr: Clean for hiding your plans\n";
+	DescrAdd = L"Descr: Creating is clearer";
+	DescrDoing = L"Descr: Retargeting is clearer";
+	DescrDone = L"Descr: Retargeting is clearer";
+	DescrHelp = L"Descr: Help is helping you";
+	DescrShow = L"Descr: Show is useful, just watch";
+	DescrDelete = L"Descr: Deleting is useful for cleaning interface";
+	DescrExit = L"Descr: Exit it's useful for retarget to terminal";
+	DescrInfo = L"Descr: Description is useful for beginners";
+	DescrClear = L"Descr: Clean for hiding your plans";
+	DescrSave = L"Descr: Back up is very important";
+	DescrRename = L"Descr: Why not?";
+	DescrLoad = L"Descr: Loading Back up is so quickly";
+	DescrCreate = L"Descr: Whose need start new to-do list";
+	DescrInvalid = L"Descr: it's not correct command";
+	DescrClear = L"Descr: Clean for hiding your plans";
 
 	////////////////////////////////////////////
 
-	HelpAdd = L"Add new task\n";
-	HelpDoing = L"move current tast to list (Doing)\n";
-	HelpDone = L"move current task to list (Done)\n";
-	HelpHelp = L"help you for comfortably set\n";
-	HelpShow = L"show lists\n";
-	HelpDelete = L"delete task from lists\n";
-	HelpExit = L"exit from application\n";
-	HelpInfo = L"information about app\n";
-	HelpClear = L"clear console\n";
-	HelpSave = L"create back up of your list\n";
-	HelpRename = L"rename title of your todo list\n";
-	HelpLoad = L"loading todo list into app\n";
-	HelpCreate = L"create new empty todo list\n";
-	HelpSettings = L"set settings\n";
-	HelpTutorial = L"learn you, how use the application\n";
+	HelpAdd = L"Add new task";
+	HelpDoing = L"move current tast to list (Doing)";
+	HelpDone = L"move current task to list (Done)";
+	HelpHelp = L"help you for comfortably set";
+	HelpShow = L"show lists";
+	HelpDelete = L"delete task from lists";
+	HelpExit = L"exit from application";
+	HelpInfo = L"information about app";
+	HelpClear = L"clear console";
+	HelpSave = L"create back up of your list";
+	HelpRename = L"rename title of your todo list";
+	HelpLoad = L"loading todo list into app";
+	HelpCreate = L"create new empty todo list";
+	HelpSettings = L"set settings";
+	HelpTutorial = L"learn you, how use the application";
+	HelpPanel = L"go to the panel where you can manipulate other tables";
+	HelpSelect = L"select list";
+	HelpBack = L"to back to selected list";
 
 	////////////////////////////////////////////
 
@@ -121,7 +131,7 @@ void SetEnglish() {
 
 	////////////////////////////////////////////
 
-	Tutorial = L"Why :\n you can made own to-do table and manipulate with that\nit's very flexible and it can out in multiple languange (which?, type 'settings')\nHow to use :\nyou type a command and argumet, if it's had\nfrom your command, application make current action (about it type 'help')\n";
+	Tutorial = L"Why :\nyou can made own to-do table and manipulate with that\nit's very flexible and it can out in multiple languange (which?, type 'settings')\nHow to use :\nyou type a command and argumet, if it's had\nfrom your command, application make current action (about it type 'help')\n";
 
 }
 
@@ -141,38 +151,41 @@ void SetRussia() {
 
 	////////////////////////////////////////////
 
-	DescrAdd = L"Descr: Создание это чистота\n";
-	DescrDoing = L"Descr: Перерозподел это чистота\n";
-	DescrDone = L"Descr: Перерозподел это чистота\n";
-	DescrHelp = L"Descr: Help помогает тебе\n";
-	DescrShow = L"Descr: Show есть полезным, просто посмотри\n";
-	DescrDelete = L"Descr: Удаление полезное для очистки интерфейсу\n";
-	DescrExit = L"Descr: Exit полезное, когда направляет тебе в терминал\n";
-	DescrInfo = L"Descr: Описание полезные для начинающих\n";
-	DescrClear = L"Descr: Clean для прикрытие планов\n";
-	DescrSave = L"Descr: Резерирование это дуже важно, не спрашывай почему\n";
-	DescrRename = L"Descr: Почему бы и нет?\n";
-	DescrLoad = L"Descr: Вигрузка резервной копии быстрее ручного заповнення из голови\n";
-	DescrCreate = L"Descr: Ктось потребует чистого То-До листа\n";
-	DescrInvalid = L"Descr: Это неправильна команда\n";
+	DescrAdd = L"Descr: Создание это чистота";
+	DescrDoing = L"Descr: Перерозподел это чистота";
+	DescrDone = L"Descr: Перерозподел это чистота";
+	DescrHelp = L"Descr: Help помогает тебе";
+	DescrShow = L"Descr: Show есть полезным, просто посмотри";
+	DescrDelete = L"Descr: Удаление полезное для очистки интерфейсу";
+	DescrExit = L"Descr: Exit полезное, когда направляет тебе в терминал";
+	DescrInfo = L"Descr: Описание полезные для начинающих";
+	DescrClear = L"Descr: Clean для прикрытие планов";
+	DescrSave = L"Descr: Резерирование это дуже важно, не спрашывай почему";
+	DescrRename = L"Descr: Почему бы и нет?";
+	DescrLoad = L"Descr: Вигрузка резервной копии быстрее ручного заповнення из голови";
+	DescrCreate = L"Descr: Ктось потребует чистого То-До листа";
+	DescrInvalid = L"Descr: Это неправильна команда";
 
 	////////////////////////////////////////////
 
-	HelpAdd = L"добавляет новые задание\n";
-	HelpDoing = L"двигает это задание до листа (Делаеться)\n";
-	HelpDone = L"двигает это задание до листа (Зделано)\n";
-	HelpHelp = L"помагает тебе комфортно настроиться\n";
-	HelpShow = L"показывает То-До лист\n";
-	HelpDelete = L"удаляет задание из листа\n";
-	HelpExit = L"выход из програми\n";
-	HelpInfo = L"информация о програме\n";
-	HelpClear = L"очищает консоль\n";
-	HelpSave = L"резервирует твой лист\n";
-	HelpRename = L"переименовует название То-До листа\n";
-	HelpLoad = L"выгружает То-До лист\n";
-	HelpCreate = L"создаёт новый пустой То-До лист\n";
-	HelpSettings = L"настроить настройки\n";
-	HelpTutorial = L"учить тебя, как пользоваться програмой\n";
+	HelpAdd = L"добавляет новые задание";
+	HelpDoing = L"двигает это задание до листа (Делаеться)";
+	HelpDone = L"двигает это задание до листа (Зделано)";
+	HelpHelp = L"помагает тебе комфортно настроиться";
+	HelpShow = L"показывает То-До лист";
+	HelpDelete = L"удаляет задание из листа";
+	HelpExit = L"выход из програми";
+	HelpInfo = L"информация о програме";
+	HelpClear = L"очищает консоль";
+	HelpSave = L"резервирует твой лист";
+	HelpRename = L"переименовует название То-До листа";
+	HelpLoad = L"выгружает То-До лист";
+	HelpCreate = L"создаёт новый пустой То-До лист";
+	HelpSettings = L"настроить настройки";
+	HelpTutorial = L"учить тебя, как пользоваться програмой";
+	HelpPanel = L"направляет в панель в котором ты манипулируешь с другим таблицами";
+	HelpSelect = L"вибырает лист";
+	HelpBack = L"возвращает в выбраной лист";
 
 	////////////////////////////////////////////
 
@@ -206,38 +219,41 @@ void SetUkraine() {
 
 	////////////////////////////////////////////
 
-	DescrAdd = L"Descr: Створення є чистiсть\n";
-	DescrDoing = L"Descr: Перерозподiлення є чистiсть\n";
-	DescrDone = L"Descr: Перерозподiлення є чистiсть\n";
-	DescrHelp = L"Descr: Help допомагає тобi\n";
-	DescrShow = L"Descr: Show є корисним, просто подивись\n";
-	DescrDelete = L"Descr: Видалення є корисним для очистки iнтерфейсу\n";
-	DescrExit = L"Descr: Exit це корисно, коли поеремiщує тебе в термiнал\n";
-	DescrInfo = L"Descr: Описи кориснi для початкiвцiв\n";
-	DescrClear = L"Descr: Clean для приховування твоїх планiв\n";
-	DescrSave = L"Descr: Резервування є дуже важливим, не питай чому\n";
-	DescrRename = L"Descr: Чому би нi?\n";
-	DescrLoad = L"Descr: Вигрузка резервної копiї швидче ручного заповнення з голови\n";
-	DescrCreate = L"Descr: Хтось потребує чистого То-До листа\n";
-	DescrInvalid = L"Descr: Це не правильна команда\n";
+	DescrAdd = L"Descr: Створення є чистiсть";
+	DescrDoing = L"Descr: Перерозподiлення є чистiсть";
+	DescrDone = L"Descr: Перерозподiлення є чистiсть";
+	DescrHelp = L"Descr: Help допомагає тобi";
+	DescrShow = L"Descr: Show є корисним, просто подивись";
+	DescrDelete = L"Descr: Видалення є корисним для очистки iнтерфейсу";
+	DescrExit = L"Descr: Exit це корисно, коли поеремiщує тебе в термiнал";
+	DescrInfo = L"Descr: Описи кориснi для початкiвцiв";
+	DescrClear = L"Descr: Clean для приховування твоїх планiв";
+	DescrSave = L"Descr: Резервування є дуже важливим, не питай чому";
+	DescrRename = L"Descr: Чому би нi?";
+	DescrLoad = L"Descr: Вигрузка резервної копiї швидче ручного заповнення з голови";
+	DescrCreate = L"Descr: Хтось потребує чистого То-До листа";
+	DescrInvalid = L"Descr: Це не правильна команда";
 
 	////////////////////////////////////////////
 
-	HelpAdd = L"добавляє нове завдання\n";
-	HelpDoing = L"рухає це завдання до листа (Робиться)\n";
-	HelpDone = L"рухає це завдання до листа (Зроблено)\n";
-	HelpHelp = L"допомагає тобi комфортно налаштуватися\n";
-	HelpShow = L"показує То-До лист\n";
-	HelpDelete = L"видаляє завдання з листа\n";
-	HelpExit = L"виходити з програми\n";
-	HelpInfo = L"iнформацiя про програму\n";
-	HelpClear = L"очищає консоль\n";
-	HelpSave = L"резервує твiй лист\n";
-	HelpRename = L"перейменовує назву То-До листа\n";
-	HelpLoad = L"вигружає То-До лист\n";
-	HelpCreate = L"створює новий порожнiй То-До лист\n";
-	HelpSettings = L"налашувати налаштування\n";
-	HelpTutorial = L"вчить тебе, як користуватися програмою\n";
+	HelpAdd = L"добавляє нове завдання";
+	HelpDoing = L"рухає це завдання до листа (Робиться)";
+	HelpDone = L"рухає це завдання до листа (Зроблено)";
+	HelpHelp = L"допомагає тобi комфортно налаштуватися";
+	HelpShow = L"показує То-До лист";
+	HelpDelete = L"видаляє завдання з листа";
+	HelpExit = L"виходити з програми";
+	HelpInfo = L"iнформацiя про програму";
+	HelpClear = L"очищає консоль";
+	HelpSave = L"резервує твiй лист";
+	HelpRename = L"перейменовує назву То-До листа";
+	HelpLoad = L"вигружає То-До лист";
+	HelpCreate = L"створює новий порожнiй То-До лист";
+	HelpSettings = L"налашувати налаштування";
+	HelpTutorial = L"вчить тебе, як користуватися програмою";
+	HelpPanel = L"направляє в панель в якому ты манипулюєш з іншими таблицями";
+	HelpSelect = L"вибирає дист";
+	HelpBack = L"повертає у вибраний лист";
 
 	////////////////////////////////////////////
 

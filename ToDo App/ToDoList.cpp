@@ -270,5 +270,5 @@ void ToDoList::CreateNewList()
     ToDo.clear();
     Doing.clear();
     Done.clear();
-    name = L"To-Do List";
+    name = L"new-ToDoList";
 }

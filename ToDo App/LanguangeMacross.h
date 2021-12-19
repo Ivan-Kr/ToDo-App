@@ -13,23 +13,6 @@ std::wstring StrWarning;
 
 ////////////////////////////////////////////
 
-std::wstring DescrAdd;
-std::wstring DescrDoing;
-std::wstring DescrDone;
-std::wstring DescrHelp;
-std::wstring DescrShow;
-std::wstring DescrDelete;
-std::wstring DescrExit;
-std::wstring DescrInfo;
-std::wstring DescrClear;
-std::wstring DescrSave;
-std::wstring DescrRename;
-std::wstring DescrLoad;
-std::wstring DescrCreate;
-std::wstring DescrInvalid;
-
-////////////////////////////////////////////
-
 std::wstring HelpAdd;
 std::wstring HelpDoing;
 std::wstring HelpDone;
@@ -79,24 +62,6 @@ void SetEnglish() {
 	StrQuestFile = L"Name and format file : ";
 
 	StrWarning = L"Are you sure about that? (Current To-Do List will be erased) (\"yes\"/not \"yes\") : ";
-
-	////////////////////////////////////////////
-
-	DescrAdd = L"Descr: Creating is clearer";
-	DescrDoing = L"Descr: Retargeting is clearer";
-	DescrDone = L"Descr: Retargeting is clearer";
-	DescrHelp = L"Descr: Help is helping you";
-	DescrShow = L"Descr: Show is useful, just watch";
-	DescrDelete = L"Descr: Deleting is useful for cleaning interface";
-	DescrExit = L"Descr: Exit it's useful for retarget to terminal";
-	DescrInfo = L"Descr: Description is useful for beginners";
-	DescrClear = L"Descr: Clean for hiding your plans";
-	DescrSave = L"Descr: Back up is very important";
-	DescrRename = L"Descr: Why not?";
-	DescrLoad = L"Descr: Loading Back up is so quickly";
-	DescrCreate = L"Descr: Whose need start new to-do list";
-	DescrInvalid = L"Descr: it's not correct command";
-	DescrClear = L"Descr: Clean for hiding your plans";
 
 	////////////////////////////////////////////
 
@@ -151,23 +116,6 @@ void SetRussia() {
 
 	////////////////////////////////////////////
 
-	DescrAdd = L"Descr: Создание это чистота";
-	DescrDoing = L"Descr: Перерозподел это чистота";
-	DescrDone = L"Descr: Перерозподел это чистота";
-	DescrHelp = L"Descr: Help помогает тебе";
-	DescrShow = L"Descr: Show есть полезным, просто посмотри";
-	DescrDelete = L"Descr: Удаление полезное для очистки интерфейсу";
-	DescrExit = L"Descr: Exit полезное, когда направляет тебе в терминал";
-	DescrInfo = L"Descr: Описание полезные для начинающих";
-	DescrClear = L"Descr: Clean для прикрытие планов";
-	DescrSave = L"Descr: Резерирование это дуже важно, не спрашывай почему";
-	DescrRename = L"Descr: Почему бы и нет?";
-	DescrLoad = L"Descr: Вигрузка резервной копии быстрее ручного заповнення из голови";
-	DescrCreate = L"Descr: Ктось потребует чистого То-До листа";
-	DescrInvalid = L"Descr: Это неправильна команда";
-
-	////////////////////////////////////////////
-
 	HelpAdd = L"добавляет новые задание";
 	HelpDoing = L"двигает это задание до листа (Делаеться)";
 	HelpDone = L"двигает это задание до листа (Зделано)";
@@ -219,23 +167,6 @@ void SetUkraine() {
 
 	////////////////////////////////////////////
 
-	DescrAdd = L"Descr: Створення є чистiсть";
-	DescrDoing = L"Descr: Перерозподiлення є чистiсть";
-	DescrDone = L"Descr: Перерозподiлення є чистiсть";
-	DescrHelp = L"Descr: Help допомагає тобi";
-	DescrShow = L"Descr: Show є корисним, просто подивись";
-	DescrDelete = L"Descr: Видалення є корисним для очистки iнтерфейсу";
-	DescrExit = L"Descr: Exit це корисно, коли поеремiщує тебе в термiнал";
-	DescrInfo = L"Descr: Описи кориснi для початкiвцiв";
-	DescrClear = L"Descr: Clean для приховування твоїх планiв";
-	DescrSave = L"Descr: Резервування є дуже важливим, не питай чому";
-	DescrRename = L"Descr: Чому би нi?";
-	DescrLoad = L"Descr: Вигрузка резервної копiї швидче ручного заповнення з голови";
-	DescrCreate = L"Descr: Хтось потребує чистого То-До листа";
-	DescrInvalid = L"Descr: Це не правильна команда";
-
-	////////////////////////////////////////////
-
 	HelpAdd = L"добавляє нове завдання";
 	HelpDoing = L"рухає це завдання до листа (Робиться)";
 	HelpDone = L"рухає це завдання до листа (Зроблено)";
@@ -258,8 +189,6 @@ void SetUkraine() {
 	////////////////////////////////////////////
 
 	SettingsNothingChange = L"Налаштування не змiнилися\n";
-	SettingsShowDescription = L"показати опис";
-	SettingsShowDescriptionChange = L"Налаштунок \"Показати Опис\" був зміненим\n";
 	SettingsSetLanguange = L"змiнити мову виведення";
 	SettingsSetLanguangeChange = L"Налаштунок \"Змiнити Мову Виведення\" був зміненим\n";
 	SettingsSetIsVertical = L"змінити вигляд на То-До листа";

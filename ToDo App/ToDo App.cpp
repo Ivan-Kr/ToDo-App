@@ -6,7 +6,7 @@
 #include <list>
 #include <vector>
 
-float ver = 2.4f;
+float ver = 2.75f;
 
 __int64 min3(__int64 a, __int64 b, __int64 c) {
     if (a < b && a < c) return a;
